@@ -1,0 +1,22 @@
+{
+  "name": "bible-man",
+  "version": "1.0.0",
+  "description": "always watching",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaharBrandman/BIBLE-MAN.git"
+  },
+  "author": "Shahar Brandman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaharBrandman/BIBLE-MAN/issues"
+  },
+  "homepage": "https://github.com/ShaharBrandman/BIBLE-MAN#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
