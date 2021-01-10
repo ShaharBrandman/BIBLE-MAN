@@ -1,6 +1,6 @@
 module.exports = {
-    name: "test",
+    name: 'test',
     execute(msg) {
-        msg.reply('works')
+        msg.channel.send('The congress demand your PENIS')
     }
 }
