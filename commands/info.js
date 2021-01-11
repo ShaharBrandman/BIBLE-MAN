@@ -3,6 +3,7 @@ const { prefix } = require('../assests/config.json')
 
 module.exports = {
     name: 'info',
+    aliases: 'info',
     execute(msg) {
         msg.reply(new Discord.MessageEmbed()
                 .setColor('#0099ff')
