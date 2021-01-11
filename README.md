@@ -12,6 +12,6 @@ Bible man is a Discord bot that is used to bring law and order to the Repetition
   - open terminal
   - git clone https://github.com/ShaharBrandman/BIBLE-MAN.git
   - npm install
-  - enter your custom prefix and API token in BIBLE-MAN/assests/config.json
+  - enter your custom prefix and API token in `BIBLE-MAN/assests/config.json`
   - node .
   - enjoy!
