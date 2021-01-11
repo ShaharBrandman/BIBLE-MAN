@@ -2,7 +2,10 @@ const fs = require('fs')
 
 module.exports = {
     name: 'giveFuckUp',
-    aliases: 'giveFuckUp',
+    aliases: [
+        'giveFuckUp',
+        'gfp'
+    ],
     execute(msg, args) {
         if (!fs.existsSync('assests/fuckups.json')) {
             fs.appendFileSync('assests/fuckups.json', '{}', (err) => {
@@ -35,7 +38,7 @@ module.exports = {
             if (err) { throw err }
         })
 
-        msg.reply(`${args[1]} is being unholy. \n${newCount}/3.`)
+        msg.channel.send(`${args[1]} is being unholy. \n${newCount}/3.`)
 
     }
 }

@@ -15,9 +15,9 @@ module.exports = {
 
             client.commands.set(command.name, command)
         }
-    }//,
+    },
 
-    //setupEvents(client) {
-    //    
-    //}
+    getFuckUpLines() {
+
+    }
 }

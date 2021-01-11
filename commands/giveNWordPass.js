@@ -2,7 +2,10 @@ const fs = require('fs')
 
 module.exports = {
     name: 'giveNWordPass',
-    aliases: 'giveNWordPass',
+    aliases: [
+        'giveNWordPass',
+        'gnwp'
+    ],
     execute(msg, args) {
         if (!fs.existsSync('assests/nword.json')) {
             fs.appendFileSync('assests/nword.json', '{}', (err) => {

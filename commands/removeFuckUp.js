@@ -2,7 +2,10 @@ const fs = require('fs')
 
 module.exports = {
     name: 'removeFuckUp',
-    aliases: 'removeFuckUp',
+    aliases: [
+        'removeFuckUp',
+        'rfp'
+    ],
     execute(msg, args) {
         if (!fs.existsSync('assests/fuckups.json')) {
             fs.appendFileSync('assests/fuckups.json', '{}', (err) => {

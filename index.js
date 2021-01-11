@@ -24,7 +24,12 @@ client.on('message', (msg) => {
     
     try {
         client.commands.find( (cmd) => {
-            if (String(cmd.aliases) == commandLine[0]) {
+            //console.log(cmd)
+            //if (String(cmd.aliases) == commandLine[0]) {
+            //    return cmd.execute(msg, msg.content.substring(prefix.length).trim().split(' '))
+            //}
+            //if (Array(cmd.aliases.some((e) => e == commandLine[0]))) {
+            if (cmd.aliases.some((e) => e == commandLine[0])) {
                 return cmd.execute(msg, msg.content.substring(prefix.length).trim().split(' '))
             }
         } )
