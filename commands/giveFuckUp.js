@@ -15,7 +15,6 @@ module.exports = {
 
         let newCount
         
-
         if (!fuckups[args[1]]) {
             newCount = 1
         }
