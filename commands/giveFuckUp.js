@@ -7,7 +7,7 @@ module.exports = {
         if (!fs.existsSync('assests/fuckups.json')) {
             fs.appendFileSync('assests/fuckups.json', '{}', (err) => {
                 if (err) { throw err }
-                console.log('New fuckups.json file has been created!')
+                //console.log('New fuckups.json file has been created!')
             })
         }
 
@@ -20,6 +20,9 @@ module.exports = {
         }
         else {
             newCount = String(Number(((fuckups[args[1]])['count']))+1)
+            if (newCount >= 3) {
+                newCount = 3
+            }
         }
 
         fuckups[args[1]] = {
@@ -32,7 +35,7 @@ module.exports = {
             if (err) { throw err }
         })
 
-        msg.reply(`${args[1]} has a total of ${newCount}/3 fuckups`)
+        msg.reply(`${args[1]} is being unholy. \n${newCount}/3.`)
 
     }
 }
