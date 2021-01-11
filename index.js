@@ -19,11 +19,13 @@ client.on('message', (msg) => {
     const args = msg.content.slice(prefix.length).trim().split('/ +/')
     console.log(`[${date}] ${msg.author.username} typed command: ${args}`)
     const commandLine = args.shift().split(' ')
+
+    if (commandLine != 'info' && !msg.member.roles.cache.some((r) => r.name == 'Conductor')) { return msg.reply("You're not the Great Conductor!") }
     
     try {
         client.commands.find( (cmd) => {
-            if (String(cmd.aliases).includes(commandLine[0])) {
-                return cmd.execute(msg, msg.content.substring(prefix.length).trim().split(' '), date)
+            if (String(cmd.aliases) == commandLine[0]) {
+                return cmd.execute(msg, msg.content.substring(prefix.length).trim().split(' '))
             }
         } )
     }

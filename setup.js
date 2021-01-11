@@ -1,4 +1,4 @@
-const { readdirSync } = require('fs')
+const { readdirSync, readFileSync, writeFileSync } = require('fs')
 
 module.exports = {
     login(client, token) {
@@ -15,9 +15,9 @@ module.exports = {
 
             client.commands.set(command.name, command)
         }
-    },
+    }//,
 
-    setupEvents(client) {
-        
-    }
+    //setupEvents(client) {
+    //    
+    //}
 }
