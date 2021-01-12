@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { punish, getFuckUpCount } = require('../tools')
 
 module.exports = {
     name: 'giveFuckUp',
@@ -14,29 +15,9 @@ module.exports = {
             })
         }
 
-        const fuckups = JSON.parse(fs.readFileSync('assests/fuckups.json'))
+        //don't send mood.png
+        punish(args[1])
 
-        let newCount
-        
-        if (!fuckups[args[1]]) {
-            newCount = 1
-        }
-        else {
-            newCount = String(Number(((fuckups[args[1]])['count']))+1)
-            if (newCount >= 3) {
-                newCount = 3
-            }
-        }
-
-        fuckups[args[1]] = {
-            count: `${newCount}`
-        }
-
-        fs.writeFileSync('assests/fuckups.json', JSON.stringify(fuckups, null, 4), (err) => {
-            if (err) { throw err }
-        })
-
-        msg.channel.send(`${args[1]} is being unholy. \n${newCount}/3.`)
-
+        msg.channel.send(`${args[1]} is being unholy. \n${getFuckUpCount(args[1])}/3.`)
     }
 }
