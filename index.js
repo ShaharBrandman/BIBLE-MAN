@@ -3,7 +3,7 @@ const moment = require('moment')
 
 const { API, prefix } = require('./assests/config.json')
 const { login, setupCommands } = require('./setup')
-const { punish, getFuckUpLines, getDefaultFuckUpLines } = require('./tools')
+const { punish, getFuckUpLines } = require('./tools')
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
@@ -14,7 +14,7 @@ setupCommands(client)
 
 client.on('message', (msg) => {
     if (msg.author.bot) { return } //if the user is a bot
-    if (getFuckUpLines().includes(msg.content) || getDefaultFuckUpLines().includes(msg.content)) { punish(msg.author.id, true, msg) } //punish will made a fuckup
+    if (getFuckUpLines().includes(msg.content)) { punish(`<@!${msg.author.id}>`, true, msg) } //punish will made a fuckup
     if (!msg.content.startsWith(prefix)) { return } //if is not a command
     const date = moment().format('YYYY/MM/DD/HH:MM:SS') //just get the date
 
