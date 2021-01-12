@@ -32,8 +32,6 @@ module.exports = {
             count: `${newCount}`
         }
 
-        //console.log(fuckups)
-
         fs.writeFileSync('assests/fuckups.json', JSON.stringify(fuckups, null, 4), (err) => {
             if (err) { throw err }
         })
