@@ -6,18 +6,23 @@ module.exports = {
     //punish the user and raise his fuckup score by 1
     //and send an image if the developer wants to
     punish(user, sendImage, msg) {
-        const image = new Discord.MessageAttachment('assests/images/mood.png')
+        //if (msg.member.roles.cache.some((r) => r.name == 'Conductor')) { return }
         const fuckups = JSON.parse(fs.readFileSync('assests/fuckups.json'))
 
-        let newCount
+        let newCount, temp
         
         if (!fuckups[user]) {
             newCount = 1
+            temp = 1
         }
         else {
             newCount = String(Number(((fuckups[user])['count']))+1)
+            temp = newCount
             if (newCount >= 3) {
-                newCount = 3
+                newCount = 0
+                temp = 3
+                msg.member.kick()
+                console.log(`${user} has fucked up to many times!`)
             }
         }
 
@@ -30,9 +35,10 @@ module.exports = {
         })
 
         if (sendImage) {
-            msg.reply(image)
-            msg.channel.send(`${newCount}/3`)
+            msg.reply(new Discord.MessageAttachment('assests/images/mood.png'))
+            msg.channel.send(`${temp}/3`)
         }
+
     },
 
     //get the user fuckup count
@@ -77,7 +83,13 @@ module.exports = {
         return (JSON.parse(fs.readFileSync('assests/fuckupslines.json', 'utf-8')))['lines']
     },
 
+    //get nigger lines
     getDefaultFuckUpLines() {
         return (JSON.parse(fs.readFileSync('assests/fuckupslines.json', 'utf-8')))['default']
+    },
+    
+    //get all users that were given the nword pass
+    getNWordPasses() {
+        return (JSON.parse(fs.readFileSync('assests/nword.json', 'utf-8')))['passes']
     }
 }

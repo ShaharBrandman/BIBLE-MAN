@@ -2,6 +2,7 @@ const fs = require('fs')
 
 module.exports = {
     name: 'revokeNWordPass',
+    conductorOnly: 'true',
     aliases: [
         'revokeNWordPass',
         'rnwp'
@@ -16,11 +17,7 @@ module.exports = {
 
         const nword = JSON.parse(fs.readFileSync('assests/nword.json'))
         
-        nword[args[1]] = {
-            hasNWordPass: `${false}`
-        }
-
-        //console.log(fuckups)
+        nword['passes'].splice(args[1], 1)
 
         fs.writeFileSync('assests/nword.json', JSON.stringify(nword, null, 4), (err) => {
             if (err) { throw err }

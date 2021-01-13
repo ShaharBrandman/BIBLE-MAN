@@ -2,6 +2,7 @@ const fs = require('fs')
 
 module.exports = {
     name: 'removeFuckUpCommand',
+    conductorOnly: 'true',
     aliases: [
         'removeFuckUpCommand',
         'rfuc'
@@ -21,7 +22,7 @@ module.exports = {
         if (args[0] == 'removeFuckUpCommand') {
             fuckuplines['lines'].splice(fuckuplines['lines'].indexOf(msg.content.slice(20)), 1)
 
-            msg.channel.send(`${msg.content.slice(20)} is no longer a fuckup`)
+            msg.channel.send(`${msg.content.slice(23)} is no longer a fuckup`)
         }
         else {
             fuckuplines['lines'].splice(fuckuplines['lines'].indexOf(msg.content.slice(8)), 1)

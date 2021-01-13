@@ -3,9 +3,10 @@ const { punish, getFuckUpCount } = require('../tools')
 
 module.exports = {
     name: 'giveFuckUp',
+    conductorOnly: 'true',
     aliases: [
         'giveFuckUp',
-        'gfp'
+        'gfu'
     ],
     execute(msg, args) {
         if (!fs.existsSync('assests/fuckups.json')) {
