@@ -17,7 +17,7 @@ module.exports = {
                 .addField("Bible man's commands prefix: ", prefix)
                 .addField('Conductor only commands:', 'giveFuckUp <user> \n removeFuckUp <user> \n setFuckUpCommand <new command> \n removeFuckUpCommand <actual command> \n giveNWordPass <user> \n revokeNWordPass <user>')
                 .addField('Normal human beings commands:', 'info')
-                .setFooter('Version: 1.0.2')
+                .setFooter('Version: 1.0.2/1')
                 .addField('bible man on Github:', 'https://github.com/ShaharBrandman/BIBLE-MAN')
                 .addField('Author Github:', 'https://github.com/ShaharBrandman')
                 )
