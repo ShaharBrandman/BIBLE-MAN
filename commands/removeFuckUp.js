@@ -3,7 +3,7 @@ const { forgive, getFuckUpCount } = require('../tools')
 
 module.exports = {
     name: 'removeFuckUp',
-    conductorOnly: 'true',
+    conductorOnly: true,
     aliases: [
         'removeFuckUp',
         'rfu'

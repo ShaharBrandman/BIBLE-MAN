@@ -2,7 +2,7 @@ const { getFuckUpLines } = require("../tools")
 
 module.exports = {
     name: 'test',
-    conductorOnly: 'true',
+    conductorOnly: true,
     aliases: [
         'test',
         't',

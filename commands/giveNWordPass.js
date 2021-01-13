@@ -2,7 +2,7 @@ const fs = require('fs')
 
 module.exports = {
     name: 'giveNWordPass',
-    conductorOnly: 'true',
+    conductorOnly: true,
     aliases: [
         'giveNWordPass',
         'gnwp'

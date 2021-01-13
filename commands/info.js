@@ -3,7 +3,7 @@ const { prefix } = require('../assests/config.json')
 
 module.exports = {
     name: 'info',
-    conductorOnly: 'false',
+    conductorOnly: false,
     aliases: [
         'info',
         'i',

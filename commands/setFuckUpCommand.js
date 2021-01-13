@@ -2,7 +2,7 @@ const fs = require('fs')
 
 module.exports = {
     name: 'setFuckUpCommand',
-    conductorOnly: 'true',
+    conductorOnly: true,
     aliases: [
         'setFuckUpCommand',
         'sfuc'
