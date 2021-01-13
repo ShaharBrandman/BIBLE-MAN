@@ -6,6 +6,7 @@ Bible man is a Discord bot that is used to bring law and order to the Repetition
   - will punish you if you fuck up
   - will approve you as a good chrisitan if you'll really be one
   - will keep the law and order in the server
+  - will punish you if the filthy n-word is spilled out of your mouth if you don't have the n-word pass
 
 # Installation:
   - open terminal
