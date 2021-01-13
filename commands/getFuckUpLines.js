@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const { getFuckUpLines } = require('../tools')
 
-/*module.exports = {
+module.exports = {
     name: 'getFuckUpLines',
     conductorOnly: false,
     aliases: [
@@ -16,4 +16,4 @@ const { getFuckUpLines } = require('../tools')
                     .addField("Default lines: ", fuckuplines['default'])
         )
     }
-}*/
+}
