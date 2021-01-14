@@ -45,7 +45,12 @@ module.exports = {
     getFuckUpCount(user) {
         const fuckups = JSON.parse(fs.readFileSync('assests/fuckups.json'))
 
-        return (fuckups[user])['count']
+        try {
+            return (fuckups[user])['count']
+        }
+        catch{
+            return 0
+        }
     },
 
     //lower the user fuckup score by one if he was a good chrisitian boi

@@ -1,4 +1,3 @@
-const Discord = require('discord.js')
 const { getFuckUpLines } = require('../tools')
 
 module.exports = {

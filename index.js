@@ -21,7 +21,7 @@ client.on('message', (msg) => {
         if (!getNWordPasses().includes(msg.author.id || msg.author.username)) { //if the user don't have the nword pass
             
             punish(`<@!${msg.author.id}>`, false, msg) //punish him
-            
+            msg.channel.send(`${getFuckUpCount(msg.author.id)}/3`)
             msg.channel.send(new Discord.MessageAttachment('assests/images/nword_pass.png')) //send cypher's image
         }
     }

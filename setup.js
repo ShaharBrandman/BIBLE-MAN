@@ -1,4 +1,4 @@
-const { readdirSync, readFileSync } = require('fs')
+const { readdirSync } = require('fs')
 
 module.exports = {
     //login and alert the host
