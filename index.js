@@ -17,7 +17,7 @@ client.on('message', (msg) => {
     if (msg.channel.type == 'dm') { return }
     
     getFuckUpLines().forEach( (e) => {
-        const msgArray = msg.content.trim().split(' ')
+        const msgArray = msg.content.toLowerCase().trim().split(' ')
         for(i in msgArray) {
             if (msgArray[i] == e && !msg.member.roles.cache.some((r) => r.name == 'Conductor')) {
                 punish(`<@!${msg.author.id}>`, true, msg)
@@ -26,7 +26,7 @@ client.on('message', (msg) => {
     })
 
     getDefaultFuckUpLines().forEach( (e) => {
-        const msgArray = msg.content.trim().split(' ')
+        const msgArray = msg.content.toLowerCase().trim().split(' ')
         for(i in msgArray) {
             if (msgArray[i] == e && !msg.member.roles.cache.some((r) => r.name == 'Conductor')) {
                 if (!getNWordPasses().includes(msg.author.id || msg.author.username)) {
@@ -41,7 +41,6 @@ client.on('message', (msg) => {
     
     //msg without the prefix
     const args = msg.content.slice(prefix.length).trim().split('/ +/')
-    //console.log(`[${moment().format('YYYY/MM/DD/HH:MM:SS')}] ${msg.author.username} typed command: ${args}`)
         
     //get the command line
     const commandLine = args.shift().split(' ')
