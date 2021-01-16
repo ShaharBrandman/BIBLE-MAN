@@ -18,7 +18,7 @@ module.exports = {
         const fuckuplines = JSON.parse(fs.readFileSync('assests/fuckupslines.json'))
 
         if (args[0] == 'setFuckUpCommand') {
-            let fuckup = msg.content.slice(20)
+            let fuckup = msg.content.toLowerCase().slice(20)
 
             if (fuckuplines['lines'].includes(fuckup)) { return msg.reply('That is already a fuckup..') }
 
@@ -26,7 +26,7 @@ module.exports = {
             //msg.channel.send(`${fuckup} has been set as a fuckup!`)
         }
         else {
-            let fuckup = msg.content.slice(8)
+            let fuckup = msg.content.toLowerCase().slice(8)
 
             if (fuckuplines['lines'].includes(fuckup)) { return msg.reply('That is already a fuckup..') }
 
