@@ -19,7 +19,6 @@ client.on('message', (msg) => {
     getFuckUpLines().forEach( (e) => {
         const msgArray = msg.content.trim().split(' ')
         for(i in msgArray) {
-            console.log(`msgArrayIndex ${Number(i) + 1}: ${msgArray[i]}`)
             if (msgArray[i] == e && !msg.member.roles.cache.some((r) => r.name == 'Conductor')) {
                 punish(`<@!${msg.author.id}>`, true, msg)
             }
